@@ -28,7 +28,7 @@ module.exports = override(
 
     // ui框架按需加载
     fixBabelImports('import',{
-        "libraryName": "antd",
+        "libraryName": "antd-mobile",
         "libraryDirectory": "es",
         "style": "css" // `style: true` 会加载 less 文件
     }),

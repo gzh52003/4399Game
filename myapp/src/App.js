@@ -2,8 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { withRouter } from 'react-router-dom';
-
-@withRouter
+import { ListView } from 'antd-mobile';
+import { NavBar, Icon } from 'antd-mobile';
 class App extends React.Component {
   state = {
     num: 10
@@ -17,9 +17,7 @@ class App extends React.Component {
     console.log('App.props',this.props)
     return (
       <div className="App">
-        Hello Test {this.state.num}
 
-        <button onClick={this.changeNumber}>change Number</button>
       </div>
     );
   }
