@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { ListView } from 'antd-mobile';
 import { NavBar, Icon } from 'antd-mobile';
 
-function Logo(){
+function Header(){
     return(
         <div className="Logo">
          <NavBar
@@ -25,4 +25,4 @@ function Logo(){
           </div>
     )
 }
-export default Logo;
+export default Header;
