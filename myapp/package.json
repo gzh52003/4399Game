@@ -7,11 +7,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-<<<<<<< HEAD
     "antd-mobile": "^2.3.4",
-=======
     "axios": "^0.20.0",
->>>>>>> 92d69c47d49d95b98023cbc2ee2313deaea68aeb
     "babel-plugin-import": "^1.13.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

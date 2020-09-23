@@ -1,0 +1,12 @@
+html body{
+    box-sizing: border-box;
+    background: #fff;
+}
+.am-navbar-title{
+    font-size: 16px;
+}
+.am-search-input{
+    border-radius: 32px;
+    background: #f5f5f5;
+
+}
