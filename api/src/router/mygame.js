@@ -29,6 +29,20 @@ router.get('/', async (req, res) => {
 
 
 })
+//查询游戏
+router.get('/list', async (req, res) => {
+	//
+
+
+	//mongo
+	const result = await mongo.find('Game', {}, {})
+
+	res.send(formatData({
+		data: result
+	}))
+
+
+})
 //正则匹配搜索
 router.get('/search', async (req, res) => {
 	//
@@ -42,7 +56,7 @@ router.get('/search', async (req, res) => {
 
 
 })
-//专为分页打造的接口
+//
 router.get('/paging', async (req, res) => {
 	//
 	//mongo

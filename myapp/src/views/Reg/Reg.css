@@ -1,0 +1,11 @@
+.am-navbar-light .am-navbar-title{
+	color: #ffffff;
+}
+.am-list-body{
+	margin: 20px;
+}
+.am-list-item.am-input-item{
+	height: 70px;
+	/* margin-top: 1px; */
+	
+}
