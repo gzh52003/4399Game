@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavBar, Icon } from 'antd-mobile';
 import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
-import '../css/search.css'
+import './search.css'
 // import request from '@/utils/request'
 import Item from 'antd-mobile/lib/popover/Item';
 class Search extends React.Component{ 
