@@ -2,7 +2,6 @@ import React,{useReducer,useState,useCallback,lazy,useHistory} from 'react'
 import request from '../../utils/request'
 import './Login.css'
 import { NavBar, Icon,List, InputItem,Button, WhiteSpace, WingBlank,Toast } from 'antd-mobile';
-import { createForm,formShape } from 'rc-form';
 class Login extends React.Component{
 	state ={
 		username:"",
@@ -30,7 +29,7 @@ class Login extends React.Component{
 					const data = await request.get('/login',{
 						...val
 					})
-					console.log(data)
+				
 					if(data.code===0){
 					
 					showToast()
