@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import Search from './Search'
+import Search from '../views/Search/Search'
 import Logo from "../HOOK/Logo";
 
 function Hook(){
