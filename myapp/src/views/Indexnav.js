@@ -1,7 +1,7 @@
 import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
 import React from 'react';
 
-class Navbar extends React.Component{
+class Indexnav extends React.Component{
 render(){
     const tabs = [
         { title: <Badge >推荐</Badge> },
@@ -17,11 +17,11 @@ render(){
       onChange={(tab, index) => { console.log('onChange', index, tab); }}
       onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
       animated={false}
-      
+
     >
     </Tabs>
         </div>
     )
 }
 }
-export default Navbar
+export default Indexnav
