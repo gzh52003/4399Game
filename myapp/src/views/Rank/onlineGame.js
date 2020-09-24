@@ -12,7 +12,7 @@ import React , { useState , useEffect} from 'react'
 import request from '@/utils/request'
 
 import { Tabs, ListView  } from 'antd-mobile';
-
+import Header from '../Header.js'
 const tabs = [
     {title: '网游', name: 'onlineGame' , path: '/onlineGame'},
     {title: '小游戏', name: 'littleGame' , path: '/littleGame'},
@@ -35,6 +35,7 @@ function Rankimg(){
 
     return(
         <div>
+		<Header />
             <div style={{width:"100%",height:80,backgroundColor:"cyan"}}></div>
             
             <img style={{width:"92%",borderRadius: 8}} src="http://imga1.4399.cn/upload_pic/2020/9/21/4399_09060472523.gif" />
