@@ -4,6 +4,7 @@ import { withRouter ,Route,Redirect,Switch} from 'react-router-dom';
 import { ListView } from 'antd-mobile';
 import { NavBar, Icon } from 'antd-mobile';
 import Header from './views/Header.js'
+import Navbar from './views/Navbar';
 const  Recommend =lazy(()=> import('./views/Recommend/recommend.js'))  
 const Login = lazy(()=> import('./views/Login/Login'))
 const Reg = lazy(()=> import('./views/Reg/Reg'))
@@ -16,7 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-		
+    <Navbar/>
 		<Suspense fallback={<div>loading...</div>}>
 		<Switch>
 		<Route path="/recommend" component={Recommend} />
