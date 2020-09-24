@@ -47,19 +47,11 @@ class Mine extends React.Component{
 
 		// let [state,dispatch] = useReducer(UseReducer,initState)
 		// let [props] = useHistory(1)
-		const add =()=>{
+		 add =()=>{
 		}
-		const data=state.Mine.map(item=>{
-			return(
-		    <Item   key={item.path} arrow="horizontal" multipleLine onClick={add}>
-		<span style={{marginRight:"10px"}}>{item.ico}</span>
-		      {item.name}
-		    </Item>
-			)
-			
-		})
+		
 		render(){
-			console.log(this.props)
+			// console.log(this.props)
 				return(
 			<div>
 			<Switch>
@@ -82,7 +74,16 @@ class Mine extends React.Component{
 				  </Flex.Item>
 			      <Flex.Item></Flex.Item>
 			    </Flex>
-				<List style={{marginTop:"15px",}}  className="my-list">{data}</List>
+				<List style={{marginTop:"15px",}}  className="my-list">{
+					this.state.Mine.map(item=>{
+			return(
+		    <Item   key={item.path} arrow="horizontal" multipleLine onClick={this.add}>
+		<span style={{marginRight:"10px"}}>{item.ico}</span>
+		      {item.name}
+		    </Item>
+			)
+			
+		})}</List>
 	
 				</Route>
 				<Route path="/minexi" component={MineXi}/>

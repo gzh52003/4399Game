@@ -2,7 +2,6 @@ import React,{useReducer,useState,useCallback,lazy,useHistory} from 'react'
 import request from '../../utils/request'
 import './Reg.css'
 import { NavBar, Icon,List, InputItem,Button, WhiteSpace, WingBlank,Toast,Checkbox } from 'antd-mobile';
-import { createForm,formShape } from 'rc-form';
 const CheckboxItem = Checkbox.CheckboxItem;
 class Reg extends React.Component{
 	state ={
