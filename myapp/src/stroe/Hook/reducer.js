@@ -1,13 +1,15 @@
 
-import React, { useState, useEffect,useCallback,useReducer, useMemo } from 'react';
+import React, {useReducer} from 'react';
 
-let instate={}
+const instate={
+	user:[],
+	showHeader:false
+}
 
-function UseReducer(state,action){
+function reducer(state,action){
     switch (action.type) {
         case 'add':
-            return {action,...state};
-			console.log(state)
+            return {...state};
         case 'remove':
             return state.filter(item => item.name != action.name);
         case 'changeQty':
@@ -24,4 +26,16 @@ function UseReducer(state,action){
     }
 	
 }
-export default UseReducer
+
+export const MyContext = React.createContext(null)
+
+
+export function Provider(props){
+	const [state,dispatch] = useReducer(reducer,instate)
+	
+	return (
+		<MyContext.Provider value={{state,dispatch}}>
+			{props.children}
+		</MyContext.Provider>
+	)
+}

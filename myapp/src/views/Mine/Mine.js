@@ -1,8 +1,6 @@
 import React,{useReducer,useState,useCallback,lazy,useHistory} from 'react'
 import { NavBar, Icon,Flex,List} from 'antd-mobile';
 
-import UseReducer from '../../HOOK/UseReducer'
-// console.log(UserReducer)
 import {UserOutlined,FileZipOutlined,GiftFilled,MailFilled,PhoneFilled} from '@ant-design/icons'
 import {Switch,Route,withRouter} from 'react-router-dom'
 import './Mine.css'

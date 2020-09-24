@@ -12,7 +12,6 @@ import React , { useState , useEffect} from 'react'
 import request from '@/utils/request'
 
 import { Tabs, ListView  } from 'antd-mobile';
-
 const tabs = [
     {title: '网游', name: 'onlineGame' , path: '/onlineGame'},
     {title: '小游戏', name: 'littleGame' , path: '/littleGame'},

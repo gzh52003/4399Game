@@ -2,7 +2,7 @@ import React from 'react';
 // import { Skeleton } from 'antd';
 import './recommend.scss';
 import request from '@/utils/request'
-
+import Header from '../Header.js'
 import { Carousel, WingBlank, Grid, List, Badge, ListView, Card, WhiteSpace, Icon, } from 'antd-mobile';
 
 const menu = [{
@@ -73,6 +73,7 @@ class Recommend extends React.Component {
         const { DataOne,HotGame,DataTwo,MailGame,DataThree,RecGame,DataFour } = this.state
         return (
             <div>
+		<Header />
                 <WingBlank>
                     <Carousel
                         autoplay={true}
