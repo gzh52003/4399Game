@@ -6,18 +6,9 @@ import { NavBar, Icon } from 'antd-mobile';
 import Indexnav from './Indexnav';
 function Header(){
 	let history = useHistory()
-		
 	
-	
-		const add = ()=>{
-			history.push('/search')
-		}
     return(
-	
-	
-		
         <div className="Logo">
-		
          <NavBar
       mode="dark"
       leftContent={[
@@ -29,13 +20,16 @@ function Header(){
       ]}
       style={{height:"55px",width:"100%"}}
     >
-      <div onClick={add} style={{width:"165px",height:"30px",textAlign:"right",background:"#fff",borderRadius:"30px",marginLeft:"10px",paddingRight:"10px"}}>
+      <div onClick={()=>{
+			history.push('/search')
+		}} style={{width:"165px",height:"30px",textAlign:"right",background:"#fff",borderRadius:"30px",marginLeft:"10px",paddingRight:"10px"}}>
         <svg t="1600757716977" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1379" width="30" height="30"><path d="M817.06 812.84a60.58 60.58 0 0 1-38.46-13.7L606.18 658.56a307.35 307.35 0 1 1 77.15-94.8L855.84 704.4a61.16 61.16 0 0 1-38.78 108.44zM605.47 619.27l192.09 156.61a31.11 31.11 0 0 0 39.32-48.22L644.76 571l6.41-11a277.67 277.67 0 0 0 37.31-139.14C688.48 267.62 563.85 143 410.66 143S132.84 267.62 132.84 420.81s124.63 277.82 277.82 277.82a277.3 277.3 0 0 0 185.26-70.8z m-194.81 51A249.41 249.41 0 1 1 587 597.17a247.77 247.77 0 0 1-176.34 73.05z m0-468.82c-121 0-219.41 98.43-219.41 219.41s98.43 219.41 219.41 219.41 219.41-98.47 219.41-219.46S531.64 201.4 410.66 201.4z" fill="#30B4FF" p-id="1380"></path><path d="M302.72 539.06a13.84 13.84 0 0 1-19.56 0.3 162.54 162.54 0 0 1-2.91-229.86 13.83 13.83 0 1 1 19.85 19.26 134.77 134.77 0 0 0-38.33 96.11 133.17 133.17 0 0 0 40.66 94.63 13.83 13.83 0 0 1 0.29 19.56z" fill="#30B4FF" p-id="1381"></path><path d="M353.74 560.7m-23.06 0a23.06 23.06 0 1 0 46.12 0 23.06 23.06 0 1 0-46.12 0Z" fill="#30B4FF" p-id="1382"></path></svg>
       </div>
     </NavBar>
-    <Indexnav/>
+    <Indexnav />
           </div>
 		  
     )
 }
+
 export default Header;

@@ -69,7 +69,7 @@ class Recommend extends React.Component {
         })
     }
     render() {
-		console.log(this.props)
+		
         const { DataOne,HotGame,DataTwo,MailGame,DataThree,RecGame,DataFour } = this.state
         return (
             <div>
