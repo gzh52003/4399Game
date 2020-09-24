@@ -10,6 +10,7 @@ const Login = lazy(()=> import('./views/Login/Login'))
 const Reg = lazy(()=> import('./views/Reg/Reg'))
 const Mine = lazy(()=> import('./views/Mine/Mine'))
 const Search =lazy(()=> import("./views/Search/Search"))
+const Rank =lazy(()=> import("./views/Rank/Rank"))
 // const MineXi = lazy(()=>import("./MineXi"))
 // const Mygame = lazy(()=>import("./Mygame"))
 class App extends React.Component {
@@ -26,6 +27,7 @@ class App extends React.Component {
 		<Route path="/reg" component={Reg} />
 		<Route path="/mine" component={Mine} />
 		<Route path="/search" component={Search} />
+    <Route path="/rank" component={Rank} />
 		<Route path="/notfound" render={()=><div>404</div>} />
 		<Redirect from="/" to="/recommend" exact/>
 		
