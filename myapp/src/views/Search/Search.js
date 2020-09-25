@@ -40,7 +40,7 @@ class Search extends React.Component{
       <NavBar
         mode="dark"
         icon={<Icon type="left" />}
-        onLeftClick={() => console.log('onLeftClick')}
+        onLeftClick={() => this.props.history.push("/recommend/")}
         style={{fontSize:"14px",color:"#fff",height:"48px"}}
       >搜索</NavBar>
       <div style={{width:"100%",background:"#fff"}}>
