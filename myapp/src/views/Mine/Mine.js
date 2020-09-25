@@ -1,15 +1,12 @@
 import React,{useReducer,useState,useCallback,lazy,useHistory} from 'react'
 import { NavBar, Icon,Flex,List} from 'antd-mobile';
 
-import UseReducer from '../../HOOK/UseReducer'
-// console.log(UserReducer)
 import {UserOutlined,FileZipOutlined,GiftFilled,MailFilled,PhoneFilled} from '@ant-design/icons'
 import {Switch,Route,withRouter} from 'react-router-dom'
 import './Mine.css'
 const Item = List.Item;
 const Brief = Item.Brief;
-const MineXi = lazy(()=>import("./MineXi"))
-const Mygame = lazy(()=>import("./Mygame"))
+
 // import Index from './Index.js'
 
 
@@ -44,14 +41,10 @@ class Mine extends React.Component{
 				
 			],
 };
-
-		// let [state,dispatch] = useReducer(UseReducer,initState)
-		// let [props] = useHistory(1)
 		 add =()=>{
 		}
 		
 		render(){
-			// console.log(this.props)
 				return(
 			<div>
 			<Switch>

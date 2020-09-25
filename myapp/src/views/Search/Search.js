@@ -6,14 +6,6 @@ import request from '@/utils/request'
 import Item from 'antd-mobile/lib/popover/Item';
 class Search extends React.Component{ 
    
-  // async function Searchhot(){
-  //     const {data} = await request.get("/mygame",{
-  //       page:1,
-  //       size:8,
-  //       category:"热门"
-  //     })
-  //     console.log(data);
-  // }
   state={
     hotdata:[]
   }
@@ -67,9 +59,9 @@ class Search extends React.Component{
         paddingLeft :"22px",width:"352px",float:"left",background:"#fff"}}>
         <p style={{height:"42px",lineHeight:"42px",fontSize:"14px",color:"#999",margin:"0"}}>热门搜索</p>
         <ul style={{width:"100%",padding:"0",height:"200px",margin:"0 0 15px 0"}}>
-        {hotdata.map(item=><li key={item.title} style={{listStyle:'none',border:"1px solid #ddd",borderRadius:"5px",width:"38%",float:"left",marginLeft:"2%",height:"40px",verticalAlign:"middle",textAlign:"left",padding:"0 7px",margin:"5px"}}>
-        <img src={item.pic} key={item.pic} style={{width:"25px",height:"25px",lineHeight:"40px",paddingTop:"10px",marginRight:"6px",display:"block",float:"left"}}/>
-        <span style={{lineHeight:"40px",fontSize:"14px",color:"#888",paddingBottom:"5px",display:"block",float:"left",width:"100px",height:"40px",overflow:"hidden"}}>{item.title}</span>
+        {hotdata.map(item=><li key={item.text} style={{listStyle:'none',border:"1px solid #ddd",borderRadius:"5px",width:"38%",float:"left",marginLeft:"2%",height:"40px",verticalAlign:"middle",textAlign:"left",padding:"0 7px",margin:"5px"}}>
+        <img src={item.icon} key={item.icon} style={{width:"25px",height:"25px",lineHeight:"40px",paddingTop:"10px",marginRight:"6px",display:"block",float:"left"}}/>
+        <span style={{lineHeight:"40px",fontSize:"14px",color:"#888",paddingBottom:"5px",display:"block",float:"left",width:"100px",height:"40px",overflow:"hidden"}}>{item.text}</span>
         </li>)}
         </ul>
       </div>
