@@ -5,12 +5,14 @@ import { ListView } from 'antd-mobile';
 import { NavBar, Icon } from 'antd-mobile';
 import Header from './views/Header.js'
 
+
 const  Recommend =lazy(()=> import('./views/Recommend/recommend.js'))  
 const Login = lazy(()=> import('./views/Login/Login'))
 const Reg = lazy(()=> import('./views/Reg/Reg'))
 const Mine = lazy(()=> import('./views/Mine/Mine'))
 const Search =lazy(()=> import("./views/Search/Search"))
 const Rank =lazy(()=> import("./views/Rank/Rank"))
+const Collection =lazy(()=> import("./views/Collection/Collection"))
 // const MineXi = lazy(()=>import("./MineXi"))
 // const Mygame = lazy(()=>import("./Mygame"))
 class App extends React.Component {
@@ -28,6 +30,7 @@ class App extends React.Component {
 		<Route path="/mine" component={Mine} />
 		<Route path="/search" component={Search} />
     <Route path="/rank" component={Rank} />
+    <Route path="/collection" component={Collection} />
 		<Route path="/notfound" render={()=><div>404</div>} />
 		<Redirect from="/" to="/recommend" exact/>
 		

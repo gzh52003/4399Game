@@ -1,7 +1,10 @@
 import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
 import React from 'react';
 
+
 class Indexnav extends React.Component{
+   
+      
 render(){
     const tabs = [
         { title: <Badge >推荐</Badge> },
@@ -13,13 +16,13 @@ render(){
     return(
         <div>
             <Tabs tabs={tabs}
-      initialPage={1}
+      initialPage={this.onTabClick}
       onChange={(tab, index) => { console.log('onChange', index, tab); }}
-      onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
+      onTabClick={(tab, index) => { console.log('onTabClick', index, tab);return index }}
       animated={false}
-
     >
     </Tabs>
+
         </div>
     )
 }
