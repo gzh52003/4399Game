@@ -1,10 +1,8 @@
 import React from 'react';
-// import { Skeleton } from 'antd';
 import './recommend.scss';
 import request from '@/utils/request'
 import Header from '../Header.js'
 import { Carousel, WingBlank, Grid, List, Badge, ListView, Card, WhiteSpace, Icon, } from 'antd-mobile';
-
 const menu = [{
     text: '网游',
     icon: '/images/recommend/sort-webgame.png'
@@ -39,7 +37,6 @@ class Recommend extends React.Component {
     async componentDidMount() {
         const DataOne = await request.get('/mygame', {
             category: 'h1'
-
         })
         const HotGame = await request.get('/mygame', {
             category: 'hotGame'
@@ -70,10 +67,11 @@ class Recommend extends React.Component {
         })
     }
     render() {
+		
         const { DataOne,HotGame,DataTwo,MailGame,DataThree,RecGame,DataFour } = this.state
         return (
             <div>
-		<Header />
+				<Header />
                 <WingBlank>
                     <Carousel
                         autoplay={true}

@@ -6,14 +6,6 @@ import request from '@/utils/request'
 import Item from 'antd-mobile/lib/popover/Item';
 class Search extends React.Component{ 
    
-  // async function Searchhot(){
-  //     const {data} = await request.get("/mygame",{
-  //       page:1,
-  //       size:8,
-  //       category:"热门"
-  //     })
-  //     console.log(data);
-  // }
   state={
     hotdata:[]
   }
