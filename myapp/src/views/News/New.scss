@@ -1,0 +1,21 @@
+.am-grid{
+    .am-flexbox{
+        height: 110px;
+        .am-grid-item-content{
+            .am-grid-icon{
+                height: 62px;
+            }
+            .am-grid-text{
+                font-size: 12px;
+            }
+        }
+    }
+}
+.am-grid.am-grid-square .am-grid-item .am-grid-item-inner-content .am-grid-icon {
+    width: 62px!important;
+}
+.am-grid .am-flexbox .am-flexbox-item .am-grid-item-content .am-grid-item-inner-content .am-grid-text {
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+}
