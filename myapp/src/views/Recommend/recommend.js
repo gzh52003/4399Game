@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Skeleton } from 'antd';
 import './recommend.scss';
 import request from '@/utils/request'
 
@@ -39,7 +38,6 @@ class Recommend extends React.Component {
     async componentDidMount() {
         const DataOne = await request.get('/mygame', {
             category: 'h1'
-
         })
         const HotGame = await request.get('/mygame', {
             category: 'hotGame'
