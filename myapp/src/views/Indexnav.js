@@ -48,9 +48,9 @@ function Indexnav(){
  }})}}
       onTabClick={(tab, index) =>history.push(tab.path)}
       animated={false}
-
     >
     </Tabs>
+
         </div>
     )
 

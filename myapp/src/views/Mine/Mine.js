@@ -6,7 +6,8 @@ import {Switch,Route,withRouter} from 'react-router-dom'
 import './Mine.css'
 const Item = List.Item;
 const Brief = Item.Brief;
-
+const MineXi =lazy(()=> import("./MineXi"));
+const Mygame =lazy(()=> import("./Mygame"));
 // import Index from './Index.js'
 
 
@@ -54,7 +55,7 @@ class Mine extends React.Component{
 			  style={{color:"#ffffff",background:"#45b0e4"}}
 		      icon={<Icon type="left" />}
 			  leftContent={["返回"]}
-		      onLeftClick={() => console.log('onLeftClick')}
+		      onLeftClick={() => this.props.history.push("/recommend/")}
 		      rightContent={[]}
 		    >个人中心</NavBar>
 			  <Flex style={{textAlign:"center",background:"#45b0e4"}}>
