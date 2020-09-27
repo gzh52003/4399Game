@@ -3,20 +3,20 @@ import React , { useState , useEffect} from 'react'
 import request from '@/utils/request'
 
 import './Rank_index.css'
-
+import Header from '../Header.js'
 import { Tabs, ListView , Button } from 'antd-mobile';
 
 const tabs = [
-    {title: '网游', name: 'onlineGame' , path: '/onlineGame'},
-    {title: '小游戏', name: 'littleGame' , path: '/littleGame'},
-    {title: '热门', name: 'hotGame' , path: '/hotGame'}
+    {title: '网游', name: 'onlineGame' , path: '/onlineGame' , text: '网游'},
+    {title: '小游戏', name: 'littleGame' , path: '/littleGame' , text: '益智'},
+    {title: '热门', name: 'hotGame' , path: '/hotGame' , text: '热门'}
 ]
 
 let pageIndex = 1
 
 function Rankimg(){
-    let [category , changeGame] = useState('益智')
-    console.log(category);
+    let [category , changeGame] = useState('网游')
+    let [pageIndex , changePage] = useState('1')
     const ds = new ListView.DataSource({
         rowHasChanged: ()=>true
     })
@@ -26,26 +26,21 @@ function Rankimg(){
             page,
             category
         })
-        setDataSource(dataSource.cloneWithRows([...data]))
+        setDataSource(dataSource.cloneWithRows([...data,...data]))
     }
     useEffect(function () {
         hotData(pageIndex,category)
-    },[])
-    function onRequestMore() {
-        if(pageIndex < 8){
-            hotData(++pageIndex,category)
-        }
-    }
-    
+    },[category,pageIndex])
+  
     function renderItem(rowData , rowID) {
 
         return (
-            <div key={rowID} style={{ padding: "0 15px"}}>
+            <div key={rowID} style={{ padding: "0 15px" , borderBottom:"5px solid #ccc"}}>
                 <div
                 style={{ display: "-webkit-box", display: "flex", padding: "15px 0" }}
                 >
                     <img
-                    style={{ height: "64px", marginRight: "15px" }}
+                    style={{ height: "64px", marginRight: "15px"}}
                     src={rowData.icon}
                     alt=""
                     />
@@ -68,11 +63,12 @@ function Rankimg(){
     }
     return(
         <div>
-            <img src="http://imga1.4399.cn/upload_pic/2020/9/21/4399_09060472523.gif" style={{width:"92%",borderRadius: 8,marginTop:"2px"}} />
+				<Header />
+            <img src="http://imga1.4399.cn/upload_pic/2020/9/21/4399_09060472523.gif" style={{width:"92%",borderRadius: 8}} />
 
             <Tabs tabs={tabs} 
             onChange={tab=>{
-                changeGame(category = tab.title)
+                changeGame(category = tab.text)
             }
             }>
                 <div>
@@ -83,7 +79,7 @@ function Rankimg(){
                     initialListSize={20}
                     pageSize={15}
                     onEndReached={event => {
-                        onRequestMore()
+                        changePage(++pageIndex)
                     }}
                     onEndReachedThreshold={50}
                     style={{height: "100%"}}
