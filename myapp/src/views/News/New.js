@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './New.scss';
 import request from '@/utils/request'
-import { Grid, List, ListView, Button } from 'antd-mobile';
+import { Grid, ListView, Button } from 'antd-mobile';
 
 
 let data = [
@@ -75,7 +75,6 @@ class News extends React.Component {
             });
         }, 600);
     }
-
     onEndReached = (event) => {
         if (this.state.isLoading && !this.state.hasMore) {
             return;
@@ -112,7 +111,6 @@ class News extends React.Component {
 
             return (
                 <div>
-
                     <div key={rowID} style={{ padding: '0 15px' }}>
 
                         <div
