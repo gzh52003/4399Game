@@ -3,6 +3,7 @@ import './New.scss';
 import request from '@/utils/request'
 import { Grid, List, ListView, Button } from 'antd-mobile';
 
+import Header from '../Header'
 
 let data = [
     {
@@ -52,18 +53,17 @@ class News extends React.Component {
     }
 
     async componentDidMount() {
-        const { data: mydata } = await request.get('/mygame', {
+        const { data: mydata } = await request.get('/mygame/list', {
             category: '益智',
             size: 100
         })
         let c = data.concat(mydata)
         data = []
         data = c
-        const NewGird = await request.get('/mygame', {
+        const NewGird = await request.get('/mygame/list', {
             category: '热门',
             size: '8'
         })
-        console.log(NewGird);
         this.setState({
             NewGird: NewGird.data
         })
@@ -112,7 +112,7 @@ class News extends React.Component {
 
             return (
                 <div>
-
+				
                     <div key={rowID} style={{ padding: '0 15px' }}>
 
                         <div
@@ -144,6 +144,7 @@ class News extends React.Component {
         };
         return (
             <div>
+			<Header />
             <img src='/images/4399_09243781974.gif' style={{width:"94%"}} />
             <Grid data={NewGird} hasLine={false} />
             <ListView

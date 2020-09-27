@@ -4,7 +4,7 @@ import { withRouter ,useHistory} from 'react-router-dom';
 
  const inState = [{
 	 tabs:[{ title: <Badge >推荐</Badge>,path:'/recommend' },
-        { title: <Badge >最新</Badge>, path:'/recommend'},
+        { title: <Badge >最新</Badge>, path:'/news'},
         { title: <Badge >排行</Badge>, path:'/rank'},
         { title: <Badge >分类</Badge> ,path:'/recommend'},
         { title: <Badge >论坛</Badge> ,path:'/recommend'}],

@@ -11,6 +11,7 @@ const Mine = lazy(()=> import('./views/Mine/Mine'))
 const Search =lazy(()=> import("./views/Search/Search"))
 const Rank =lazy(()=> import("./views/Rank/Rank"))
 const Collection =lazy(()=> import("./views/Collection/Collection"))
+const News =lazy(()=> import("./views/News/New"))
 class App extends React.Component {
 
   render() {
@@ -23,13 +24,14 @@ class App extends React.Component {
 			<Route path="/reg" component={Reg} />
 			<Route path="/mine" component={Mine} />
 			<Route path="/search" component={Search} />
-		  <Route path="/recommend" component={Recommend} />
-      <Route path="/rank" component={Rank} />
-		  <Route path="/notfound" render={()=><div>404</div>} />
-      <Route path="/collection" component={Collection} />
-		  <Redirect from="/" to="/recommend" exact/>
-		  </Switch>
-		   </Suspense>
+			<Route path="/recommend" component={Recommend} />
+			<Route path="/rank" component={Rank} />
+			<Route path="/collection" component={Collection} />
+			<Route path="/news" component={News} />
+			<Route path="/notfound" render={()=><div>404</div>} />
+			<Redirect from="/" to="/recommend" exact/>
+			</Switch>
+		  </Suspense>
       </div>
     );
   }
