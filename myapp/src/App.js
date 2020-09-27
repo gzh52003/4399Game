@@ -25,8 +25,8 @@ class App extends React.Component {
 			<Route path="/mine" component={Mine} />
 			<Route path="/search" component={Search} />
 		  <Route path="/recommend" component={Recommend} />
-      <Route path="/rank" component={Rank} />
-	  <Route path="/mygame" component={Mygame} />
+      <Route path="/rank" component={Rank}/>
+	  <Route path="/mygame" component={Mygame}/>
 		  <Route path="/notfound" render={()=><div>404</div>} />
 		  <Redirect from="/" to="/recommend" exact/>
 		  </Switch>
