@@ -6,86 +6,79 @@ const {
 const mongo = require('../utils/mongo')
 
 
-//查询购物车数据
-router.get('/list', async (req, res) => {
+//查看所有我的游戏
+router.get('/', async (req, res) => {
 
-
-
-	const result = await mongo.find('cart', {}, {})
-
+	const result = await mongo.find('MyGame', {}, {})
 	res.send(formatData({
 		data: result
 	}))
 
 })
-//查询单个数据
-router.get('/list/:id', async (req, res) => {
-		const {id} = req.params
-	
-	const result = await mongo.find('cart', {_id:id})
+//查询单个游戏
+router.get('/:id', async (req, res) => {
+	const {
+		id
+	} = req.params
 
-	res.send(formatData({
-		data: result[0]
-	}))
+	const result = await mongo.find('MyGame', {
+		_id: id
+	})
+
+		res.send(formatData({
+			data: result[0]
+		}))
+	
 
 })
-//新增购物车商品
-router.post('/add', async (req, res) => {
-
-	let {
-		name,
-		skuprice,
-		img,
-		title,
-		qty
-	} = req.body
+//验证游戏是否保存
+router.get('/verification', async (req, res) => {
+	const {
+		text
+	} = req.params
 
 	try {
-		result = await mongo.insert('cart', {
-			name,
-			skuprice,
-			img,
-			title,
-			qty
+		const result = await mongo.find('MyGame', {
+			text
 		})
 		res.send(formatData())
 	} catch (err) {
 		res.send(formatData({
 			code: 0
 		}))
+	
 	}
 
 })
-//购物车商品数量修改
-router.put('/eidt/:id', async (req, res) => {
-	let {id} = req.params
-	let {
-		name,
-		skuprice,
-		img,
-		title,
-		qty
-	} = req.body
-	
+//新增我的游戏
+router.post('/add', async (req, res) => {
 
-	let newData = {
-		// name,
-		// skuprice,
-		// img,
-		// title,
-		qty,
-	}
+	let {
+		title,
+		pic,
+		category,
+		categoryid,
+		html5introduce,
+		wapclicks,
+		username
+		
+	} = req.body
 
 	try {
-
-		 await mongo.update('cart',{_id:id},{$set:newData})
+		result = await mongo.insert('MyGame', {
+			title,
+			pic,
+			category,
+			categoryid,
+			html5introduce,
+			wapclicks,
+			username
+		})
 		res.send(formatData())
 	} catch (err) {
-		
 		res.send(formatData({
 			code: 0
 		}))
-
 	}
 
 })
@@ -97,7 +90,7 @@ router.delete('/:id', async (req, res) => {
 	} = req.params
 
 	try {
-		const result = await mongo.remove('cart', {
+		const result = await mongo.remove('MyGame', {
 			_id: id
 		})
 		res.send(formatData())

@@ -55,7 +55,6 @@ class Reg extends React.Component{
 	}
 	}
 	onChecked = ({target}) =>{
-				console.log(target)
 				this.setState({
 					...this.state,
 					checked:target.checked
@@ -64,7 +63,6 @@ class Reg extends React.Component{
 		
 	}
 	 reg = async (val)=>{
-				console.log(this.state)
 				if(!this.state.regAdd){
 				showToast()
 				function showToast() {
@@ -80,7 +78,10 @@ class Reg extends React.Component{
 				}
 				}else {
 					const data = await request.post('/reg',{...val})
-					
+					if(data.code===1){
+						
+					this.props.history.push('/login')
+					}
 				}	
 		}
 	render(){
@@ -111,7 +112,7 @@ class Reg extends React.Component{
 				<CheckboxItem defaultChecked={this.state.checked} onChange={this.onChecked}>我已同意<span style={{color:"#6fc700"}}>《用户协议》</span></CheckboxItem>  </div>
 				<Button onClick={this.reg.bind(this,{...this.state})} style={{background: "#70c700",margin:"10px",color:"#fff"}} size="large" type="注册">注册</Button><WhiteSpace />
 				<div style={{textAlign:"right",color:"#999"}}>
-					<span>已有帐号点击登录</span>
+					<span onClick={()=>this.props.history.push('/login')}>已有帐号点击登录</span>
 				</div>
 				
 	</div>

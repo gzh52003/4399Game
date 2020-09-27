@@ -42,14 +42,27 @@ class Mine extends React.Component{
 				
 			],
 };
-		
-		 add=(path)=>{
-			this.props.history.push(path) 
+		 add =()=>{
+			 
+
 		}
-		
+		componentDidMount(){
+			const currentUser = localStorage.getItem("currentUser");
+			console.log(currentUser)
+				const user = JSON.parse(currentUser)
+				this.setState({
+					...this.state,
+					user:user
+				})
+		}
+		remove = (path)=>{
+			console.log(1)
+		}
+	
 		render(){
-			console.log(this.props);
-				return(
+			const {user} =this.state
+			
+		return(
 			<div>
 			<NavBar
 		      mode="light"
@@ -62,17 +75,22 @@ class Mine extends React.Component{
 			  <Flex style={{textAlign:"center",background:"#45b0e4"}}>
 			      <Flex.Item></Flex.Item>
 			      <Flex.Item>
-				  <div>
-				  <a style={{display:"inline-block",lineHeight: "40px",lin:"center"}}><span>头像</span></a>
-				  <p>登录</p>
-				  </div>
+				  {
+				   user?<div>
+				<a style={{display:"inline-block",paddingTop:"10px"}}><span><img style={{width:"61px",borderRadius:"50%",}} src={user.avatarUrl}/></span></a>
+				  <p style={{color:"#fff"} } onClick={this.remove}>{user.username}</p>
+				 </div>:<div>
+					   <a style={{display:"inline-block",paddingTop:"10px"}}><span><img style={{width:"61px",borderRadius:"50%",}} src="/images/touxiangimg.png"/></span></a>
+					  <p style={{color:"#fff"} } onClick={()=>{this.props.history.push('/login')} }>请登录</p>
+					  </div>
+				  }
 				  </Flex.Item>
 			      <Flex.Item></Flex.Item>
 			    </Flex>
 				<List style={{marginTop:"15px",}}  className="my-list">{
 					this.state.Mine.map(item=>{
 			return(
-			<Item   key={item.path} arrow="horizontal" multipleLine onClick={this.add.bind(this,item.path)}>
+		    <Item   key={item.path} arrow="horizontal" multipleLine onClick={this.add.bind(this,item.path)}>
 		<span style={{marginRight:"10px"}}>{item.ico}</span>
 		      {item.name}
 		    </Item>
