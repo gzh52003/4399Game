@@ -7,7 +7,7 @@ import Item from 'antd-mobile/lib/popover/Item';
 class Search extends React.Component{ 
    
   state={
-    hotdata:[]
+    hotdata:[],
   }
   
   async componentDidMount(){
@@ -49,6 +49,7 @@ class Search extends React.Component{
         placeholder="请输入游戏名称"
         cancelText=" "
         style={{width:"279px",height:"32px",padding:"8px 0 8px 27px",background:"#fff",float:"left"}}
+        
       />
       <span style={{display:"block",height:"48px",width:"42px",float:"left",lineHeight:"48px",textAlign:"center",background:"#fff",color:"#999",fontSize:"16px",fontWeight:"bold",paddingRight:"27px"}}>
         搜索

@@ -30,8 +30,6 @@ export function withUser(InnerComponent){
 			)
 		}
 	}
-	
-	
 }
 
 export function withStorage(key){

@@ -44,6 +44,7 @@ class Mine extends React.Component{
 };
 		 add =()=>{
 			 
+
 		}
 		componentDidMount(){
 			const currentUser = localStorage.getItem("currentUser");
@@ -63,8 +64,6 @@ class Mine extends React.Component{
 			
 		return(
 			<div>
-			<Switch>
-			<Route>
 			<NavBar
 		      mode="light"
 			  style={{color:"#ffffff",background:"#45b0e4"}}
@@ -98,13 +97,7 @@ class Mine extends React.Component{
 			)
 			
 		})}</List>
-	
-				</Route>
-				<Route path="/minexi" component={MineXi}/>
-				<Route path="/mygame" component={Mygame}/>	
-		
-		</Switch>
-		</div>
+	</div>
 		
 	)
 		}

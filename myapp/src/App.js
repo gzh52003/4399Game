@@ -1,6 +1,6 @@
-import React,{lazy,Suspense} from 'react';
+import React, { lazy, Suspense } from 'react';
 import './App.css';
-import { withRouter ,Route,Redirect,Switch} from 'react-router-dom';
+import { withRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { ListView } from 'antd-mobile';
 import { NavBar, Icon } from 'antd-mobile';
 const New = lazy(()=> import('./views/News/New'))  
@@ -12,14 +12,14 @@ const Search =lazy(()=> import("./views/Search/Search"))
 const Rank =lazy(()=> import("./views/Rank/Rank"))
 const Collection =lazy(()=> import("./views/Collection/Collection"))
 const News =lazy(()=> import("./views/News/New"))
-class App extends React.Component {
 
+class App extends React.Component {
   render() {
     return (
       <div className="App">
 		<Suspense fallback={<div>loading...</div>}>
 			<Switch>
-			<Route path="/New" component={New} />
+			<Route path="/new" component={New} />
 			<Route path="/login" component={Login} />
 			<Route path="/reg" component={Reg} />
 			<Route path="/mine" component={Mine} />
@@ -32,11 +32,12 @@ class App extends React.Component {
 			<Redirect from="/" to="/recommend" exact/>
 			</Switch>
 		  </Suspense>
+
       </div>
     );
   }
 
 }
-App=withRouter(App)
+App = withRouter(App)
 export default App;
 
