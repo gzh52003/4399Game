@@ -42,14 +42,15 @@ class Mine extends React.Component{
 				
 			],
 };
-		 add =()=>{
+		
+		 add=(path)=>{
+			this.props.history.push(path) 
 		}
 		
 		render(){
+			console.log(this.props);
 				return(
 			<div>
-			<Switch>
-			<Route>
 			<NavBar
 		      mode="light"
 			  style={{color:"#ffffff",background:"#45b0e4"}}
@@ -71,20 +72,14 @@ class Mine extends React.Component{
 				<List style={{marginTop:"15px",}}  className="my-list">{
 					this.state.Mine.map(item=>{
 			return(
-		    <Item   key={item.path} arrow="horizontal" multipleLine onClick={this.add}>
+			<Item   key={item.path} arrow="horizontal" multipleLine onClick={this.add.bind(this,item.path)}>
 		<span style={{marginRight:"10px"}}>{item.ico}</span>
 		      {item.name}
 		    </Item>
 			)
 			
 		})}</List>
-	
-				</Route>
-				<Route path="/minexi" component={MineXi}/>
-				<Route path="/mygame" component={Mygame}/>	
-		
-		</Switch>
-		</div>
+	</div>
 		
 	)
 		}

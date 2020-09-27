@@ -33,6 +33,7 @@ class App extends React.Component {
 		);
 	}
 
+
 }
 App = withRouter(App)
 export default App;
