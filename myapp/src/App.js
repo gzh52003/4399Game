@@ -3,14 +3,14 @@ import './App.css';
 import { withRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { ListView } from 'antd-mobile';
 import { NavBar, Icon } from 'antd-mobile';
-const News = lazy(() => import('./views/News/New'))
-const Recommend = lazy(() => import('./views/Recommend/recommend.js'))
-const Login = lazy(() => import('./views/Login/Login'))
-const Reg = lazy(() => import('./views/Reg/Reg'))
-const Mine = lazy(() => import('./views/Mine/Mine'))
-const Search = lazy(() => import("./views/Search/Search"))
-const Rank = lazy(() => import("./views/Rank/Rank"))
-const Collection = lazy(() => import("./views/Collection/Collection"))
+const News = lazy(() => import('~/News/New'))
+const Recommend = lazy(() => import('~/Recommend/recommend.js'))
+const Login = lazy(() => import('~/Login/Login'))
+const Reg = lazy(() => import('~/Reg/Reg'))
+const Mine = lazy(() => import('~/Mine/Mine'))
+const Search = lazy(() => import("~/Search/Search"))
+const Rank = lazy(() => import("~/Rank/Rank"))
+const Collection = lazy(() => import("~/Collection/Collection"))
 class App extends React.Component {
 	render() {
 		return (
