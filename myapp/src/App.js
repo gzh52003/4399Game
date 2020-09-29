@@ -3,6 +3,7 @@ import './App.css';
 import { withRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { ListView } from 'antd-mobile';
 import { NavBar, Icon } from 'antd-mobile';
+
 const New = lazy(()=> import('./views/News/New'))  
 const Recommend =lazy(()=> import('./views/Recommend/recommend.js'))  
 const Login = lazy(()=> import('./views/Login/Login'))
