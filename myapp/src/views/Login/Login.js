@@ -30,7 +30,7 @@ class Login extends React.Component{
 						...val
 					})
 				
-					if(data.code===0){
+				if(data.code===0){
 					
 					showToast()
 				function showToast() {
@@ -39,9 +39,13 @@ class Login extends React.Component{
 				}
 						
 					}else{
+					 localStorage.setItem("currentUser", JSON.stringify({...data.data}));
+						
+					this.props.history.push('/recommend')
 						
 					}
 			}
+		 
 		
 	render(){
 		
@@ -68,7 +72,7 @@ class Login extends React.Component{
 		        </List>
 				<Button onClick={this.login.bind(this,{...this.state})} style={{background: "#70c700",margin:"10px",color:"#fff"}} size="large" type="登录">登录</Button><WhiteSpace />
 				<div style={{textAlign:"right",color:"#999"}}>
-					<span>注册</span><span style={{margin:"0px 10px 0px 10px"}}>|</span><span>忘记密码(?)</span>
+					<span onClick={()=>this.props.history.push('/reg')}>注册</span><span style={{margin:"0px 10px 0px 10px"}}>|</span><span>忘记密码(?)</span>
 				</div>
 				
 	</div>
